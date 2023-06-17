@@ -26,7 +26,7 @@ namespace ToyRobotPuzzle
             bool isCommandREPORT = command == Command.REPORT.ToString();
             if (isCommandPLACE.Success)
             {
-                validatePLACECommand(command);
+                place(command);
                     
             }
             else if (_is1stCommandPLACEExecuted && isCommandMOVE)
@@ -47,7 +47,7 @@ namespace ToyRobotPuzzle
             }
 
         }
-        private void validatePLACECommand(string commandPLACE)
+        private void place(string commandPLACE)
         {
             bool isValidPLACECommand = true;
             string parameters = commandPLACE.Remove(0, 5).Trim();
